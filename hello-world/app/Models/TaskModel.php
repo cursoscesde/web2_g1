@@ -6,16 +6,14 @@ use CodeIgniter\Model;
 
 class TaskModel extends Model
 {
-    function addTask(){
-        $name = "estudiar sql";
-        $description = "Repasar javascript, sql y php para proyecto";
-        $date = "14/04/2021";
-        $sql = "INSERT INTO tareas (name, description, date) VALUES ('{$name}', '{$description}', '{$date}')";
+    function addTask($task, $description, $imageUrl){
+        
+        $sql = "INSERT INTO tasks (task, description, image_url) VALUES ('{$task}', '{$description}', '{$imageUrl}')";
         $this->db->query($sql);
     }
 
     function readTasks(){
-        $sql = "SELECT * FROM tareas";
+        $sql = "SELECT * FROM tasks";
         $tasks = $this->db->query($sql);
         return $tasks->getResult();
     }

@@ -10,11 +10,19 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://goo.gl/maps/uXewsGp76NikMLWY9"onclick="showAlertLogo()">
-                <img src="<?php echo base_url();?>/public/assets/img/php_img.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                WEB 2
-            </a>
+            <a class="navbar-brand" href="<?php echo base_url().'/task'?>">TaskApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/task/create'?>">Crear Tarea</a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
     </nav>

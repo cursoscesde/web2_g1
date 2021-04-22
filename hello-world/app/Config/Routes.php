@@ -36,6 +36,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'LoginController::index');
 $routes->get('/task', 'TaskController::index');
 $routes->get('/task/create', 'TaskController::create');
+$routes->post('/add-task', 'TaskController::addTask');
 
 /*
  * --------------------------------------------------------------------

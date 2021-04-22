@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost:80/hello-world';
+	public $baseURL = 'http://localhost:80/web2_g1/hello-world/public';
 
 	/**
 	 * --------------------------------------------------------------------------
