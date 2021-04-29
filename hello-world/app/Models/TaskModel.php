@@ -17,4 +17,19 @@ class TaskModel extends Model
         $tasks = $this->db->query($sql);
         return $tasks->getResult();
     }
+
+    function deleteTask($id){
+        $sql = "DELETE FROM tasks WHERE id={$id}";
+        $this->db->query($sql);
+    }
+
+    function getTask($id){
+        $sql = "SELECT * FROM tasks WHERE id={$id}";
+        $task = $this->db->query($sql);
+        return $task->getResult();
+    }
+    function updateEditedTask($id, $task, $description, $imageUrl){
+        $sql = "UPDATE tasks set task='{$task}', description='{$description}', image_url='{$imageUrl}' WHERE id={$id}";
+        $this->db->query($sql);
+    }
 }

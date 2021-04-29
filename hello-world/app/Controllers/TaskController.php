@@ -15,9 +15,16 @@ class TaskController extends BaseController
 		echo view('layouts/footer');
 	}
 	public function create(){
-		echo view('layouts/header');
-		echo view('create_task_view');
-		echo view('layouts/footer');
+		$session = session();
+		echo $session->get('username');
+		if($session->get('username') != "" || $session->get('username') != null){
+			echo view('layouts/header');
+			echo view('create_task_view');
+			echo view('layouts/footer');
+		}
+		else{
+			echo "no tiene permisos para acceder";
+		}
 	}
 
 	public function addTask(){
@@ -27,6 +34,35 @@ class TaskController extends BaseController
 		$description = $request->getPost('description');
 		$imageUrl = $request->getPost('imageUrl');
 		$taskModel->addTask($task, $description, $imageUrl);
+		return redirect()->to('/task');
+	}
+
+	public function deleteTask(){
+		$taskModel = new TaskModel();
+		$request = \Config\Services::request();
+		$id = $request->getGet('id');
+		$taskModel->deleteTask($id);
+		return redirect()->to('/task');
+	}
+
+	public function updateTask(){
+		$taskModel = new TaskModel();
+		$request = \Config\Services::request();
+		$id = $request->getGet('id');
+		$task = $taskModel->getTask($id);
+		echo view('layouts/header');
+		echo view('update_task', array("task" => $task[0]));
+		echo view('layouts/footer');
+	}
+
+	public function updateEditedTask(){
+		$taskModel = new TaskModel();
+		$request = \Config\Services::request();
+		$task = $request->getPost('task');
+		$description = $request->getPost('description');
+		$imageUrl = $request->getPost('imageUrl');
+		$id = $request->getGet('id');
+		$taskModel->updateEditedTask($id,$task,$description,$imageUrl);
 		return redirect()->to('/task');
 	}
 }
