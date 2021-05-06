@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/task/create'?>">Crear Tarea</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo base_url().'/public/task/create'?>">Crear Tarea</a>
                     </li>
                 </ul>
             </div>

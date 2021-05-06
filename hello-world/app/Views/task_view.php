@@ -3,8 +3,8 @@
         <?php
         foreach ($tasks as $item) {
             // echo "Tarea: {$task->name} - Descripción: {$task->description} - Fecha {$task->date}";
-            $deleteRoute = base_url()."/delete-task?id={$item->id}";
-            $updateRoute = base_url()."/update-task?id={$item->id}";
+            $deleteRoute = base_url()."/public/delete-task?id={$item->id}";
+            $updateRoute = base_url()."/public/update-task?id={$item->id}";
             $template = "
         <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
             <div class='card' style='width: 18rem;'>
