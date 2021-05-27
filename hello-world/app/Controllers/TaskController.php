@@ -32,6 +32,7 @@ class TaskController extends BaseController
 
 	public function addTask()
 	{
+		//http://localhost:80/web2_g1/hello-world/public/uploads/images/12424235345.png
 		$request = \Config\Services::request();
 		$taskModel = new TaskModel();
 		$task = $request->getPost('task');
@@ -44,7 +45,6 @@ class TaskController extends BaseController
 			$imageUrl = base_url() . "/uploads/images/" . $imageName;
 		}
 		// $imageUrl = $request->getPost('imageUrl');
-
 		$taskModel->addTask($task, $description, $imageUrl);
 
 		return redirect()->to('/task');
@@ -81,4 +81,5 @@ class TaskController extends BaseController
 		$taskModel->updateEditedTask($id, $task, $description, $imageUrl);
 		return redirect()->to('/task');
 	}
+	
 }

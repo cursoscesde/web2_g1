@@ -33,17 +33,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'LoginController::index');
-$routes->post('/signin', 'LoginController::signIn');
-$routes->get('/task', 'TaskController::index');
-$routes->get('/showTasks', 'TaskController::showTasks');
-$routes->post('/createTask', 'TaskController::createTask');
-$routes->put('/upTask', 'TaskController::upTask');
-$routes->get('/task/create', 'TaskController::create');
-$routes->post('/add-task', 'TaskController::addTask');
-$routes->get('/delete-task', 'TaskController::deleteTask');
-$routes->get('/update-task', 'TaskController::updateTask');
-$routes->post('/update-edited-task', 'TaskController::updateEditedTask');
+$routes->get('/get-users', 'UserController::getUsers');
 
 /*
  * --------------------------------------------------------------------
