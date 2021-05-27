@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import LoginPage  from './login/LoginPage';
+import HeaderComponent from './shared/components/header/HeaderComponent';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HeaderComponent />
+    <LoginPage />
   </React.StrictMode>,
   document.getElementById('root')
 );
