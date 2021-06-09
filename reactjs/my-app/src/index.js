@@ -5,11 +5,13 @@ import App from './App';
 import LoginPage  from './login/LoginPage';
 import HeaderComponent from './shared/components/header/HeaderComponent';
 import reportWebVitals from './reportWebVitals';
+import RegisterPage from './register/RegisterPage';
 
 ReactDOM.render(
   <React.StrictMode>
     <HeaderComponent />
     <LoginPage />
+    <RegisterPage />
   </React.StrictMode>,
   document.getElementById('root')
 );
